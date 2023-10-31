@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>E06-Weill</title>
+    
+    <style>
+        body {
+            font-family: 'Arial'
+            background-color: gray;
+        }
+        #fridge {
+            width: 500px;
+            height: 700px;
+            padding: 30px;
+            margin: 40px auto;
+            background-color: bisque;
+        }
+		.app-buttons {
+			display: flex;
+			margin-bottom: 10px;
+        }
+        #powerButtons {
+            text-align: left;
+            margin-bottom: 10px;
+        }	
+		button {
+            padding: 20px 20px;
+            border: none;
+            background-color: gray;
+            color: white;
+        }
+        #clock {
+            text-align: center;
+            font-size: 35px;
+        }
+        #temp {
+            text-align: left;
+            font-size: 30px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        .apps {
+            display: none;
+        }
+        .apps img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="powerButtons">
+        <button onclick="power('on')">On</button>
+        <button onclick="power('off')">Off</button>
+    </div>
+
+    <div id="fridge">
+		<div id="temp">Temperature: 32°F</div>
+        <div id="clock">00:00:00</div>
+        
+
+        <div class="app-buttons">
+            <button onclick="display('Scan')">Scan</button>
+			<button onclick="display('Google')">Google</button>
+            <button onclick="display('Netflix')">Netflix</button>
+        </div>
+        
+        <div class="apps" id="Scan"><img src="https://www.sandravalvassori.com/wp-content/uploads/2021/04/2020-3260-6-728x811.jpg"></div>
+		<div class="apps" id="Google"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Google_Homepage.PNG/1280px-Google_Homepage.PNG"></div>
+        <div class="apps" id="Netflix"><img src="https://images.ctfassets.net/4cd45et68cgf/2Dw84LjrNM9RE1zEeYTsU5/1abcf90a91229fe804fb5fec90e22472/coming-to-netflix_-reminders-for-your-favorite-titles.jpg?w=2000"></div>
+    </div>
+
+    <script>
+		let currentDisplay = null;
+		
+		function updateClock() {
+            let now = new Date();
+            let timeString = now.toTimeString().split(' ')[0];
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+
+        function power(state) {
+            const display = document.getElementById('fridge');
+            if (state === 'on') {
+                display.style.display = 'block';
+            } else {
+                display.style.display = 'none';
+                if (currentDisplay) {
+                    document.getElementById(currentDisplay).style.display = "none";
+                    currentDisplay = null;
+                }
+            }
+        }
+
+        function display(id) {
+            if (currentDisplay) {
+                document.getElementById(currentDisplay).style.display = "none";
+            }
+
+            let contentDiv = document.getElementById(id);
+            contentDiv.style.display = "block";
+            currentDisplay = id;
+        }
+    </script>
+</body>
+<footer>
+<hr>
+Gus Weill
+</footer>
+
+</html>
