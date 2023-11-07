@@ -3,52 +3,80 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>E06-Weill</title>
+    <title>E09-Weill</title>
     
     <style>
         body {
             font-family: 'Arial'
             background-color: gray;
+			flex-direction:column;
+			justify-content: center;
+			align-items: center;
         }
         #fridge {
-            width: 500px;
-            height: 700px;
-            padding: 30px;
-            margin: 40px auto;
-            background-color: bisque;
+			display: flex;
+			flex-direction: column;
+			align-items; center;
+			border: 1px black;
+			margin-top:5%
+			padding: 3%;
+			background-color: bisque;
         }
 		.app-buttons {
 			display: flex;
+			justify-content: space-between;
 			margin-bottom: 10px;
         }
         #powerButtons {
-            text-align: left;
+            text-align: center;
             margin-bottom: 10px;
         }	
 		button {
-            padding: 20px 20px;
+            padding: 10px 10px;
             border: none;
-            background-color: gray;
+            background-color: teal;
             color: white;
         }
+		
         #clock {
             text-align: center;
-            font-size: 35px;
+            font-size: 60px;
+			margin-top: 10px;
         }
-        #temp {
-            text-align: left;
-            font-size: 30px;
-            padding: 8px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-        }
+
+		.temp-display {
+			font-size: 24px;
+			text-align: right;
+		}
+		
+		.tempUp {
+			background-color: teal;
+			border-radius: 10px;
+		}
+        .tempDown {
+			background-color: teal;
+			border-radius: 10px;
+		}
+
+		.weather{
+			text-align:center;
+		}
+		
         .apps {
             display: none;
         }
+		
         .apps img {
             width: 100%;
             border-radius: 10px;
         }
+		
+		.groceryList {
+		  font-size: 20px;
+		  text-align: center;
+		  color: teal;
+		  width: 200px;
+		}
     </style>
 </head>
 
@@ -59,54 +87,157 @@
     </div>
 
     <div id="fridge">
-		<div id="temp">Temperature: 32°F</div>
+		<div class="temp-display">
+		<button onclick="timer()" style="float:left">Activate timer</button>
+		<p id="timeLeft" style="float:left; text-align:center;">60</h3>
+        <p id="tempDisplay">37°F</p>
+        <button class="button" id="tempMode" onclick="switchFarCel()">F/C</button>
+        <button class="tempUp" id="tempUp" onclick="tempUp()">+</button>
+        <button class="tempDown" id="tempDown" onclick="tempDown()">-</button>
+		</div>
+		
+		
+		<div class="weather"> <img src="https://i.imgur.com/Vg2zBXh.png" width="500" height="100";> </div>
+		<div class= "groceryList">
+		<h2>Grocery List</h2>
+		<ol id="groceryList">
+		<li>Apples</li>
+		<li>Dog Food</li>
+		<li>Detergent</li>
+		</ol>
+		<input type="text" id="addItem" placeholder="Type Item Here">
+		<input type="button" value="+" onclick="addList()">
+	</div>
         <div id="clock">00:00:00</div>
         
 
         <div class="app-buttons">
             <button onclick="display('Scan')">Scan</button>
 			<button onclick="display('Google')">Google</button>
-            <button onclick="display('Netflix')">Netflix</button>
+            <button onclick="display('Netflix'); playBeep()">Netflix</button>
         </div>
         
-        <div class="apps" id="Scan"><img src="https://www.sandravalvassori.com/wp-content/uploads/2021/04/2020-3260-6-728x811.jpg"></div>
+        <div class="apps" id="Scan"><img src="https://www.sandravalvassori.com/wp-content/uploads/2021/04/2020-3260-6-728x811.jpg" height = "700"></div>
 		<div class="apps" id="Google"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Google_Homepage.PNG/1280px-Google_Homepage.PNG"></div>
         <div class="apps" id="Netflix"><img src="https://images.ctfassets.net/4cd45et68cgf/2Dw84LjrNM9RE1zEeYTsU5/1abcf90a91229fe804fb5fec90e22472/coming-to-netflix_-reminders-for-your-favorite-titles.jpg?w=2000"></div>
     </div>
 
     <script>
-		let currentDisplay = null;
+//Fridge + Clock
+	let currentDisplay = null;
+	
+	function updateClock() {
+		let now = new Date();
+		let timeString = now.toTimeString().split(' ')[0];
+		document.getElementById('clock').textContent = timeString;
+	}
+
+	setInterval(updateClock, 1000);
+
+	function power(state) {
+		const display = document.getElementById('fridge');
+		if (state === 'on') {
+			display.style.display = 'block';
+		} else {
+			display.style.display = 'none';
+			if (currentDisplay) {
+				document.getElementById(currentDisplay).style.display = "none";
+				currentDisplay = null;
+			}
+		}
+	}
+
+	function display(id) {
+		if (currentDisplay) {
+			document.getElementById(currentDisplay).style.display = "none";
+		}
+
+		let contentDiv = document.getElementById(id);
+		contentDiv.style.display = "block";
+		currentDisplay = id;
+	}
+// Temp
+	const temperature = document.getElementById("tempDisplay");
+	let currentTemperature = 37;
+	let currentTempMode = "F";
+	let tempF = true;
+	let tempC = false;
+	
+	function tempUp() {
+		currentTemperature++;
+		updateTemperatureDisplay();
+	}
+
+	function tempDown() {
+		currentTemperature--;
+		updateTemperatureDisplay();
+	}
+
+	function updateTemperatureDisplay() {
+		temperature.textContent = `${currentTemperature}°${currentTempMode}`;
+	}
+
+	function statusToggle() {
+		if (!isStatusShown) {
+			statusDisplay.style.display = "none";
+			upperStatusDisplay.style.display = "none";
+			statusBar.style.display = "none";
+		} else {
+			statusDisplay.style.display = "inline-flex";
+			upperStatusDisplay.style.display = "inline-flex";
+			statusBar.style.display = "inline-flex";
+		}
+	}
+
+	function switchFarCel() {
+
+		if (tempF) {
+			currentTempMode = "C";
+			currentTemperature = Math.ceil((currentTemperature - 32) * 5/9);
+			tempC = true;
+			updateTemperatureDisplay();
+			tempF = false;
+		} else {
+			currentTempMode = "F";
+			currentTemperature = Math.ceil((currentTemperature * 9/5) + 32);
+			tempF = true;
+			updateTemperatureDisplay();
+			tempC = false;
+		}
+	}
+// Timer
+	function timer(){
+		var audio = new Audio('alarm.mp3');
+		var element = document.getElementById("timeLeft");
+		var timer = setInterval(function() {
+			var value = element.innerHTML;
+			value--;
+			element.innerHTML = value;
+			if (value === 0) {
+				audio.play();
+				clearTimeout(timer);
+			}
+		}, 1000);
+	}
+// Grocery List
+	function addList() {
+		var addItemInput = document.getElementById("addItem");
+		var addItemText = addItemInput.value;
 		
-		function updateClock() {
-            let now = new Date();
-            let timeString = now.toTimeString().split(' ')[0];
-            document.getElementById('clock').textContent = timeString;
-        }
+		if (addItemText.trim() !== "") {
+			var shoppingItemsList = document.getElementById("groceryList");
+			var addItem = document.createElement("li");
+		addItem.textContent = addItemText;
+		groceryList.appendChild(addItem);
+		addItemInput.value = " ";
+	}
+}
+// TV Noise
+	function playBeep(){
+	var beep = new Audio('tvbeep.mp3');
+	beep.play();
+	}
 
-        setInterval(updateClock, 1000);
-
-        function power(state) {
-            const display = document.getElementById('fridge');
-            if (state === 'on') {
-                display.style.display = 'block';
-            } else {
-                display.style.display = 'none';
-                if (currentDisplay) {
-                    document.getElementById(currentDisplay).style.display = "none";
-                    currentDisplay = null;
-                }
-            }
-        }
-
-        function display(id) {
-            if (currentDisplay) {
-                document.getElementById(currentDisplay).style.display = "none";
-            }
-
-            let contentDiv = document.getElementById(id);
-            contentDiv.style.display = "block";
-            currentDisplay = id;
-        }
     </script>
 </body>
 <footer>
