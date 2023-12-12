@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>FoxBooks</title>
+</head>
+<style>
+html
+{ height: 100%;}
+
+*
+{ margin: 0;
+  padding: 0;}
+
+body
+{ font: arial;
+  background: beige;
+  color: #777;}
+
+p
+{ padding: 0 0 20px 0;
+  line-height: 1.7em;}
+
+img
+{ border: 0;}
+
+h1, h2, h3, h4, h5, h6 
+{ font: normal 175% 'century gothic', arial, sans-serif;
+  color: #43423F;
+  margin: 0 0 15px 0;
+  padding: 15px 0 5px 0;}
+
+h2
+{ font: normal 175% 'century gothic', arial, sans-serif;
+  color: #1293EE;}
+
+h4, h5, h6
+{ margin: 0;
+  padding: 0 0 5px 0;
+  font: normal 120% arial, sans-serif;
+  color: #1293EE;}
+
+h5, h6
+{ font: italic 95% arial, sans-serif;
+  padding: 0 0 15px 0;
+  color: #000;}
+
+a, a:hover
+{ outline: none;
+  text-decoration: underline;
+  color: #CC0000;}
+
+a:hover
+{ text-decoration: none;}
+
+.left
+{ float: left;
+  width: auto;
+  margin-right: 10px;}
+
+.right
+{ float: right; 
+  width: auto;
+  margin-left: 10px;}
+
+.center
+{ display: block;
+  text-align: center;
+  margin: 20px auto;}
+
+blockquote
+{ margin: 20px 0; 
+  padding: 10px 20px 0 20px;
+  border: 1px solid #E5E5DB;
+  background: #FFF;}
+
+ul
+{ margin: 2px 0 22px 17px;}
+
+ul li
+{ list-style-type: circle;
+  margin: 0 0 6px 0; 
+  padding: 0 0 4px 5px;}
+
+ol
+{ margin: 8px 0 22px 20px;}
+
+ol li
+{ margin: 0 0 11px 0;}
+
+#main, #logo, #menubar, #site_content, #footer
+{ margin-left: auto; 
+  margin-right: auto;}
+
+#header
+{ background: #A80000;
+  height: 240px;}
+
+#logo
+{ width: 825px;
+  position: relative;
+  height: 168px;
+  background: #A80000}
+
+#logo #logo_text 
+{ position: absolute; 
+  top: 20px;
+  left: 0;}
+
+#logo h1, #logo h2
+{ font: normal 300% 'century gothic', arial, sans-serif;
+  border-bottom: 0;
+  text-transform: none;
+  margin: 0;}
+
+#logo_text h1, #logo_text h1 a, #logo_text h1 a:hover 
+{ padding: 22px 0 0 0;
+  color: #FFF;
+  letter-spacing: 0.1em;
+  text-decoration: none;}
+
+#logo_text h1 a .logo_colour
+{ color: #FAF700;}
+
+#logo_text h2
+{ font-size: 100%;
+  padding: 4px 0 0 0;
+  color: #DDD;}
+
+#menubar
+{ width: 877px;
+  height: 72px;
+  padding: 0;
+  background: #5A2C24 url(menu.png) repeat-x;} 
+
+ul#menu, ul#menu li
+{ float: left;
+  margin: 0; 
+  padding: 0;}
+
+ul#menu li
+{ list-style: none;}
+
+ul#menu li a
+{ letter-spacing: 0.1em;
+  font: normal 100% 'lucida sans unicode', arial, sans-serif;
+  display: block; 
+  float: left; 
+  height: 37px;
+  padding: 29px 26px 6px 26px;
+  text-align: center;
+  color: #FFF;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent;} 
+
+ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
+{ color: #FFF;
+  background: #451C1B url(menu_select.png) repeat-x;}
+
+#site_content
+{ width: 837px;
+  overflow: hidden;
+  margin: 0 auto 0 auto;
+  padding: 20px 24px 20px 37px;
+  background: #FFF url(content.png) repeat-y;} 
+
+.sidebar
+{ float: right;
+  width: 190px;
+  padding: 0 15px 20px 15px;}
+
+.sidebar ul
+{ width: 178px; 
+  padding: 4px 0 0 0; 
+  margin: 4px 0 30px 0;}
+
+.sidebar li
+{ list-style: none; 
+  padding: 0 0 7px 0; }
+
+.sidebar li a, .sidebar li a:hover
+{ padding: 0 0 0 40px;
+  display: block;
+  background: transparent url(link.png) no-repeat left center;} 
+
+.sidebar li a.selected
+{ color: #444;
+  text-decoration: none;} 
+
+#footer
+{ width: 878px;
+  font: normal 100% 'lucida sans unicode', arial, sans-serif;
+  height: 33px;
+  padding: 24px 0 5px 0;
+  text-align: center; 
+  background: #29425E url(footer.png) repeat-x;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;}
+
+#footer a
+{ color: #FFF;
+  text-decoration: none;}
+
+#footer a:hover
+{ color: #FFF;
+  text-decoration: underline;}
+
+.search
+{ color: #5D5D5D; 
+  border: 1px solid #BBB; 
+  width: 134px; 
+  padding: 4px; 
+  font: 100% arial, sans-serif;}
+  
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+  
+
+ </style>
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <h1>FoxBooks</span></a></h1>
+          <h2>Textbooks, News, and More!</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+
+          <li class="selected"><a href="index.html">Home</a></li>
+          <li><a href="Courses.html">Courses</a></li>
+          <li><a href="404.html">Employment</a></li>
+          <li><a href="404.html">Catalog</a></li>
+          <li><a href="404.html">Contact Us</a></li>
+		  <li><input name="search" type="image" style="border: 0; margin: 0 0 -10px 5px;" src="style/cart.png"/></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        <h3>Latest News</h3>
+        <h4>New Releases</h4>
+        <h5>December 11th, 2023</h5>
+        <p>Take a look at our new releases and hot deals! Including everyone's favorite Calculus II Textbook!<br /><a href="404.html">Read more</a></p>
+        <p></p>
+        <h4>Black Friday Isn't Over Yet!</h4>
+        <h5>November 26th, 2023</h5>
+        <p>Missed out on all our latest deals? It's not too late! Check out our catalog for our latest rental and purchase options!<br /><a href="404.html">Read more</a></p>
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="404.html">Cheatsheets</a></li>
+          <li><a href="404.html">Study Guides</a></li>
+          <li><a href="404.html">Best Sellers</a></li>
+          <li><a href="404.html">Must Haves</a></li>
+        </ul>
+        <h3>Search</h3>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
+          </p>
+        </form>
+      </div>
+      <div id="content">
+        <h1>Welcome to FoxBooks</h1>
+        <p> Our Marist College sponsored bookstore is now open for business! Website is clearly a work in progress. For now, feel free to hop right into shopping and visit our <a href="404.html">main store</a>. Alternatively, look below and take use of our search function. </p>
+        <p> Looking to see our catalog of courses? Click on the links above, which will direct you to our <strong>Catalog</strong> and <strong>Courses</strong> lists.</p>
+        <p> We hope you enjoy your shopping experience, and provide feedback through our <strong>Contact Us</strong> tab should you find any issues!</p>
+        <h2>Hot New Releases</h2>
+        <p>Click to add to your cart!</p>
+        <ul>
+			<div class="row">
+			  <div class="column">
+				<img src="style/discretemath.jpg" style="width:100%">
+			  </div>
+			  <div class="column">
+				<img src="style/history.jpg" style="width:100%">
+			  </div>
+			  <div class="column">
+				<img src="style/science.jpg" style="width:100%">
+			  </div>
+			</div>
+        </ul>
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+    Last Updated by Gus Weill - 12/11/2023
+    </div>
+  </div>
+</body>
+</html>
