@@ -1,164 +1,170 @@
-{
-	"courses":	{
-		"Statistics":	{
-			"name": "Statistics 101",
-			"school": "Mathematics"
-			"crn": "10923" ,
-			"professor": "A. Smith",
-			"credits": "3"
-			"book1": {
-				"title": "Introduction to Statistics"
-				"isbn": "2323223222"
-				"author": "Dr. J. Gumbo"
-				"publisher": "MathFun"
-				"edition": "3"	}
-			"book2": {
-				"title": "NYS Census 1990-2011"
-				"isbn": "2329990232"
-				"author": "Andy Cuomo"
-				"publisher": "NYS Office of Census"
-				"edition": "1"	}
-		}
-		
-		"Calculus":	{
-			"name": "Calculus 1",
-			"school": "Mathematics"
-			"crn": "10924" ,
-			"professor": "B. Jenkins",
-			"credits": "4"
-			"book1": {
-				"title": "Introduction to Calculus"
-				"isbn": "2323223333"
-				"author": "Rodger E. Clementine"
-				"publisher": "MathFun"
-				"edition": "2"	}
-			"book2": {
-				"title": "Calculus Cheat Sheets"
-				"isbn": "2329990550"
-				"author": "Randy G. Stuff"
-				"publisher": "Stuff's Math Guides"
-				"edition": "1"	}
-		}
-		
-		"18thCentEng":	{
-			"name": "Eighteenth Century English",
-			"school": "English"
-			"crn": "23913" ,
-			"professor": "B. Reader",
-			"credits": "3"
-			"book1": {
-				"title": "Revolutionary Poetry"
-				"isbn": "2323223111"
-				"author": "Fire R. Starter"
-				"publisher": "Patriot Books"
-				"edition": "2"	}
-			"book2": {
-				"title": "The Autobiography of Ben Franklin"
-				"isbn": "2329990666"
-				"author": "Benjamin Franklin"
-				"publisher": "Penguin Publishing"
-				"edition": "1"	}
-		}
-		
-		"Forestry":	{
-			"name": "The Nature of Trees",
-			"school": "Environmental Science"
-			"crn": "40238" ,
-			"professor": "J. Gaia",
-			"credits": "3"
-			"book1": {
-				"title": "Trees and Shrubbery"
-				"isbn": "2321333999"
-				"author": "Crystal Brooks"
-				"publisher": "Green Publishing"
-				"edition": "2"	}
-			"book2": {
-				"title": "How to Save Paper"
-				"isbn": "2329933321"
-				"author": "Myles H. Heller"
-				"publisher": "Hypocritical Printing"
-				"edition": "13"	}
-		}
-		
-		"Robotics":	{
-			"name": "Introduction to Robotics",
-			"school": "Computer Science"
-			"crn": "10111" ,
-			"professor": "N. Synthetic",
-			"credits": "3"
-			"book1": {
-				"title": "AI And You"
-				"isbn": "1010011101"
-				"author": "Not A. Cyborg"
-				"publisher": "Singularity Books"
-				"edition": "1"	}
-			"book2": {
-				"title": "Laser Weaponry"
-				"isbn": "2329937721"
-				"author": "LT. Bob Farmer"
-				"publisher": "US Army"
-				"edition": "2"	}
-		}
-
-		"Fashion":	{
-			"name": "The History of Big Hats",
-			"school": "Fashion"
-			"crn": "60007" ,
-			"professor": "R. Tophat",
-			"credits": "3"
-			"book1": {
-				"title": "Hat Sizes 101"
-				"isbn": "2321339762"
-				"author": "Ronald F. Horotwitz"
-				"publisher": "Big Head Books"
-				"edition": "5"	}
-			"book2": {
-				"title": "The Twenty Gallon Hat"
-				"isbn": "2232318882"
-				"author": "John R. Wayne"
-				"publisher": "Wild West Publishing"
-				"edition": "3"	}
-		}
-
-		"AquaticScience":	{
-			"name": "Study of Porpoises",
-			"school": "Environmental Science"
-			"crn": "8992130" ,
-			"professor": "I. Eukaryota",
-			"credits": "3"
-			"book1": {
-				"title": "Dolphin Migration Patterns"
-				"isbn": "2321332991"
-				"author": "Tara Rogan"
-				"publisher": "Green Publishing"
-				"edition": "2"	}
-			"book2": {
-				"title": "The Narwhal Problem"
-				"isbn": "2329931111"
-				"author": "Tony Pegleg"
-				"publisher": "High Sea Books"
-				"edition": "1"	}
-		}
-
-		"Architecture":	{
-			"name": "Victorian Architecture",
-			"school": "Architecture"
-			"crn": "892379" ,
-			"professor": "Dr. M. House",
-			"credits": "4"
-			"book1": {
-				"title": "Compendium of Haunted Houses"
-				"isbn": "2321332991"
-				"author": "Jerry M. Sloan"
-				"publisher": "Ghosthunter Prints"
-				"edition": "2"	}
-			"book2": {
-				"title": "The Architecture of New England"
-				"isbn": "2379823988"
-				"author": "Tom Brady"
-				"publisher": "Patriot Publishing"
-				"edition": "1"	}
-		}
-		
-		
-		
+[
+  {
+    "name": "Statistics 101",
+    "school": "Mathematics",
+    "crn": "10923",
+    "professor": "A. Smith",
+    "credits": "3",
+    "book1": {
+      "title": "Introduction to Statistics",
+      "isbn": "2323223222",
+      "author": "Dr. J. Gumbo",
+      "publisher": "MathFun",
+      "edition": "3"
+    },
+    "book2": {
+      "title": "NYS Census 1990-2011",
+      "isbn": "2329990232",
+      "author": "Andy Cuomo",
+      "publisher": "NYS Office of Census",
+      "edition": "1"
+    }
+  },
+  {
+    "name": "Calculus 1",
+    "school": "Mathematics",
+    "crn": "10924",
+    "professor": "B. Jenkins",
+    "credits": "4",
+    "book1": {
+      "title": "Introduction to Calculus",
+      "isbn": "2323223333",
+      "author": "Rodger E. Clementine",
+      "publisher": "MathFun",
+      "edition": "2"
+    },
+    "book2": {
+      "title": "Calculus Cheat Sheets",
+      "isbn": "2329990550",
+      "author": "Randy G. Stuff",
+      "publisher": "Stuff's Math Guides",
+      "edition": "1"
+    }
+  },
+  {
+    "name": "Eighteenth Century English",
+    "school": "English",
+    "crn": "23913",
+    "professor": "B. Reader",
+    "credits": "3",
+    "book1": {
+      "title": "Revolutionary Poetry",
+      "isbn": "2323223111",
+      "author": "Fire R. Starter",
+      "publisher": "Patriot Books",
+      "edition": "2"
+    },
+    "book2": {
+      "title": "The Autobiography of Ben Franklin",
+      "isbn": "2329990666",
+      "author": "Benjamin Franklin",
+      "publisher": "Penguin Publishing",
+      "edition": "1"
+    }
+  },
+  {
+    "name": "The Nature of Trees",
+    "school": "Environmental Science",
+    "crn": "40238",
+    "professor": "J. Gaia",
+    "credits": "3",
+    "book1": {
+      "title": "Trees and Shrubbery",
+      "isbn": "2321333999",
+      "author": "Crystal Brooks",
+      "publisher": "Green Publishing",
+      "edition": "2"
+    },
+    "book2": {
+      "title": "How to Save Paper",
+      "isbn": "2329933321",
+      "author": "Myles H. Heller",
+      "publisher": "Hypocritical Printing",
+      "edition": "13"
+    }
+  },
+  {
+    "name": "Introduction to Robotics",
+    "school": "Computer Science",
+    "crn": "10111",
+    "professor": "N. Synthetic",
+    "credits": "3",
+    "book1": {
+      "title": "AI And You",
+      "isbn": "1010011101",
+      "author": "Not A. Cyborg",
+      "publisher": "Singularity Books",
+      "edition": "1"
+    },
+    "book2": {
+      "title": "Laser Weaponry",
+      "isbn": "2329937721",
+      "author": "LT. Bob Farmer",
+      "publisher": "US Army",
+      "edition": "2"
+    }
+  },
+  {
+    "name": "The History of Big Hats",
+    "school": "Fashion",
+    "crn": "60007",
+    "professor": "R. Tophat",
+    "credits": "3",
+    "book1": {
+      "title": "Hat Sizes 101",
+      "isbn": "2321339762",
+      "author": "Ronald F. Horotwitz",
+      "publisher": "Big Head Books",
+      "edition": "5"
+    },
+    "book2": {
+      "title": "The Twenty Gallon Hat",
+      "isbn": "2232318882",
+      "author": "John R. Wayne",
+      "publisher": "Wild West Publishing",
+      "edition": "3"
+    }
+  },
+  {
+    "name": "Study of Porpoises",
+    "school": "Environmental Science",
+    "crn": "8992130",
+    "professor": "I. Eukaryota",
+    "credits": "3",
+    "book1": {
+      "title": "Dolphin Migration Patterns",
+      "isbn": "2321332991",
+      "author": "Tara Rogan",
+      "publisher": "Green Publishing",
+      "edition": "2"
+    },
+    "book2": {
+      "title": "The Narwhal Problem",
+      "isbn": "2329931111",
+      "author": "Tony Pegleg",
+      "publisher": "High Sea Books",
+      "edition": "1"
+    }
+  },
+  {
+    "name": "Victorian Architecture",
+    "school": "Architecture",
+    "crn": "892379",
+    "professor": "Dr. M. House",
+    "credits": "4",
+    "book1": {
+      "title": "Compendium of Haunted Houses",
+      "isbn": "2321332991",
+      "author": "Jerry M. Sloan",
+      "publisher": "Ghosthunter Prints",
+      "edition": "2"
+    },
+    "book2": {
+      "title": "The Architecture of New England",
+      "isbn": "2379823988",
+      "author": "Tom Brady",
+      "publisher": "Patriot Publishing",
+      "edition": "1"
+    }
+  }
+]
